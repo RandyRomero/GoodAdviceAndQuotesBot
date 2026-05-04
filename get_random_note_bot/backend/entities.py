@@ -45,7 +45,7 @@ class NoteEntity:
             LEFT JOIN authors ON authors.id = notes.author_id
             JOIN notes_topics ON notes.id = public.notes_topics.note_id
             JOIN topics ON notes_topics.topic_id = topics.id
-            WHERE topics.id == 35
+            WHERE topics.id = 35
             ORDER BY random()
             LIMIT 1;
             """,
