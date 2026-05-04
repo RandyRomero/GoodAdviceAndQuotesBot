@@ -31,7 +31,7 @@ class NoteEntity:
         return result
 
     async def get_be_relentless_note(self) -> Record:
-        """Get a note with """
+        """Get a note with"""
         async with self.database.get_connection() as conn:
             result = await conn.fetchrow(
                 """
@@ -45,8 +45,8 @@ class NoteEntity:
             LEFT JOIN authors ON authors.id = notes.author_id
             JOIN notes_topics ON notes.id = public.notes_topics.note_id
             JOIN topics ON notes_topics.topic_id = topics.id
-            WHERE topics.id == 35 
-            ORDER BY random() 
+            WHERE topics.id == 35
+            ORDER BY random()
             LIMIT 1;
             """,
             )

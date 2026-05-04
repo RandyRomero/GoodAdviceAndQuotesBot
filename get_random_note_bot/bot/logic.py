@@ -1,6 +1,9 @@
+from asyncpg.protocol.protocol import Record
+
 from get_random_note_bot.bot.repository import Entities
 
-def _format_note(note_from_db: str) -> str:
+
+def _format_note(note_from_db: Record) -> str:
     """Format a note from the database."""
     note = note_from_db["note"]
     topic = note_from_db["topic"]
@@ -10,6 +13,7 @@ def _format_note(note_from_db: str) -> str:
     if info:
         formatted_note = f"{formatted_note}\nAdditional info: {info}"
     return formatted_note
+
 
 async def get_a_random_note(entities: Entities) -> str:
     """Get a formatted string with a random note."""
