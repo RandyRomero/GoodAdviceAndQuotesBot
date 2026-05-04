@@ -9,6 +9,9 @@ class NoteSourceType(tp.Protocol):
     async def get_random_one(self) -> Record:
         pass
 
+    async def get_be_relentless_note(self) -> Record:
+        pass
+
 
 class Notes:
     """Provides methods to work with the Note entity."""
@@ -20,6 +23,10 @@ class Notes:
     async def get_random_one(self) -> Record:
         """Returns a random note."""
         return await self.source.get_random_one()
+
+    async def get_be_relentless_note(self) -> Record:
+        """Returns Be Relentless Note."""
+        return await self.source.get_be_relentless_note()
 
 
 class Entities:

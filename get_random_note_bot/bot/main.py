@@ -32,6 +32,9 @@ class TelegramBot:
         self.dispatcher.message(F.text == ButtonsText.GET_A_RANDOM_NOTE)(
             self.handlers.reply_get_a_random_note_handler,
         )
+        self.dispatcher.message(F.text == ButtonsText.BE_RELENTLESS_NOTE)(
+            self.handlers.reply_be_relentless_handler,
+        )
         self.dispatcher.message()(self.handlers.reply_message_handler)
 
 
